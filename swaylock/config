@@ -26,15 +26,25 @@ inside-caps-lock-color=00000033
 inside-ver-color=00000033
 inside-wrong-color=00000033
 
-ring-color=cba6f7
-ring-clear-color=cba6f7
-ring-caps-lock-color=cba6f7
+## Mauve
+#ring-color=cba6f7
+#ring-clear-color=cba6f7
+#ring-caps-lock-color=cba6f7
+#line-color=cba6f7
+#line-clear-color=cba6f7
+#line-caps-lock-color=cba6f7
+
+
+ring-color=89dceb
+ring-clear-color=89dceb
+ring-caps-lock-color=89dceb
+line-color=89dceb
+line-clear-color=89dceb
+line-caps-lock-color=89dceb
+
 ring-ver-color=a6e3a1
 ring-wrong-color=eba0ac
 
-line-color=cba6f7
-line-clear-color=cba6f7
-line-caps-lock-color=cba6f7
 line-ver-color=a6e3a1
 line-wrong-color=eba0ac
 

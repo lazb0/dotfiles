@@ -4,7 +4,7 @@ return {
     branch = "0.1.x",
 
     dependencies = {
-        "plenary"
+        'nvim-lua/plenary.nvim'
     },
 
     config = function()

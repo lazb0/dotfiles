@@ -10,6 +10,7 @@ config_dots=(
     "waybar"
     "wlogout"
     "wofi"
+    "foot"
 )
 
 home_dots=(

@@ -10,16 +10,25 @@
 }
 
 window#waybar {
-    background-color: shade(@base, 0.9);
+    background-color: alpha(shade(@base, 0.9), 0.6);
     border-bottom: 2px solid alpha(@crust, 0.5);
     color: @text;
     transition-property: background-color;
     transition-duration: .5s;
-    border-radius: 0;
+    border-radius: 8px;
 }
 
 window#waybar.hidden {
     opacity: 0.2;
+}
+
+tooltip * {
+    padding: 8px; 
+    background: transparent;
+}
+
+tooltip {
+    background-color: alpha(@mantle, 0.8);
 }
 
 /*
@@ -42,7 +51,7 @@ window#waybar.chromium {
 
 #workspaces button {
     min-width: 0;
-    padding: 0 0.4em;
+    padding: 0 0.6em;
     background-color: transparent;
     color: @text;
     /* Use box-shadow instead of border so the text isn't offset */
@@ -57,7 +66,7 @@ window#waybar.chromium {
 
 #workspaces button.focused {
     background-color: @surface0;
-    box-shadow: inset 0 -3px @mauve;
+    box-shadow: inset 0 -3px @sky;
 }
 
 #workspaces button.urgent {
@@ -66,10 +75,9 @@ window#waybar.chromium {
 
 #mode {
     background-color: @surface0;
-    border-bottom: 3px solid @mauve;
+    border-bottom: 3px solid @sky;
 }
 
-#clock,
 #battery,
 #cpu,
 #memory,
@@ -82,6 +90,9 @@ window#waybar.chromium {
 #mode,
 #idle_inhibitor,
 #mpd,
+#custom-exit,
+#custom-updates,
+#custom-gpu,
 #language {
     padding: 1px 10px;
     margin: 6px 3px; 
@@ -89,109 +100,12 @@ window#waybar.chromium {
     background-color: @surface0;
 }
 
-#window,
-#workspaces {
-    margin: 0 4px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}
-
-* {
-    border: none;
-    border-radius: 4px;
-    font-family: "Roboto Mono Nerd Font Medium", Helvetica, Arial, sans-serif;
-    /* adjust font-size value to your liking: */
-    font-size: 16px;
-    min-height: 0;
-}
-
-window#waybar {
-    background-color: shade(@base, 0.9);
-    border-bottom: 2px solid alpha(@crust, 0.5);
-    color: @text;
-    transition-property: background-color;
-    transition-duration: .5s;
-    border-radius: 0;
-}
-
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: @text;
-}
-*/
-
-window#waybar.termite {
-    background-color: @red;
-}
-
-window#waybar.chromium {
-    background-color: @crust;
-    border: none;
-}
-
-#workspaces button {
-    padding: 0 0.8em;
-    background-color: transparent;
-    color: @text;
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces button.focused {
-    background-color: @surface0;
-    box-shadow: inset 0 -3px @mauve;
-}
-
-#workspaces button.urgent {
-    background-color: @maroon;
-}
-
-#mode {
-    background-color: @surface0;
-    border-bottom: 3px solid @mauve;
+#custom-updates,
+#custom-exit {
+    padding: 1px 10px 1px 5px;
 }
 
 #clock,
-#battery,
-#cpu,
-#memory,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#mpd,
-#language {
-    padding: 1px 10px;
-    margin: 6px 3px; 
-    color: @subtext1;
-    background-color: @surface0;
-}
-
 #window,
 #workspaces {
     margin: 0 4px;
