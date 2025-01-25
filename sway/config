@@ -5,12 +5,6 @@ gaps inner 6px
 gaps outer 16px
 
 default_border pixel 1
-
-## Mauve
-# client.focused #cba6f7 #cba6f7 #cba6f7 #f5c2e7
-# client.focused_inactive #cba6f7 #cba6f7 #f5c2e7
-
-## Sky
 client.focused #89dceb #89dceb #89dceb #89dceb
 client.focused_inactive #89dceb #89dceb #89dceb
 client.unfocused #181825 #181825 #181825
@@ -46,27 +40,19 @@ output * bg ~/.bg.png fill
 
 
 ###
-# Idle configuration
-###
-exec swayidle -w \
-         timeout 300 'swaylock' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock'
-
-###
 # Start app on startup
 ###
-         exec dunst
-         exec easyeffects --gapplication-service
+exec easyeffects --gapplication-service
+exec steam
+exec discord
 
 ###
 # Input configuration
 ###
-         input type:pointer {
-             accel_profile flat
-                 pointer_accel 0.65
-         }
-
+input type:pointer {
+    accel_profile flat
+    pointer_accel 0.65
+}
 
 input type:touchpad {
     dwt enable
@@ -97,24 +83,13 @@ bindsym $mod+t exec $term
 # Kill focused window
 bindsym $mod+c kill
 
-# Start your launcher
+# Start launcher
 bindsym $mod+d exec $menu
 
-# Suspend system
-bindsym $mod+p exec systemctl suspend
-
-# Drag floating windows by holding down $mod and left mouse button.
-# Resize them with right mouse button + $mod.
-# Despite the name, also works for non-floating windows.
-# Change normal to inverse to use left mouse button for resizing and right
-# mouse button for dragging.
 floating_modifier $mod normal
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
-
-# Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 # Locks session
 bindsym $mod+Escape exec swaylock
@@ -148,21 +123,10 @@ bindsym $mod+Shift+Right move right
 ##
 # Workspaces:
 #
-
-set $screen2 HDMI-A-1
-
-# Laptop settings:
-#    set screen1 eDP-1
-#    output eDP-1 pos 0 1080 res 1920x1080
-#    output HDMI-A-1 pos 0 0 res 1920x1080
-
-# PC settings:
 set $screen1 DP-3
-output DP-3 pos 1080 480 res 2560x1440 adaptive_sync on
+set $screen2 HDMI-A-1
+output DP-3 pos 1080 480 res 2560x1440 adaptive_sync on render_bit_depth 10
 output HDMI-A-1 pos 0 0 res 1920x1080 transform 90
-
-exec_always xrandr --output $screen1 --primary
-
 
 workspace 1 output $screen1
 workspace 2 output $screen1
@@ -261,24 +225,14 @@ bindsym $mod+a focus parent
 # Resizing containers:
 #
 mode "resize" {
-# left will shrink the containers width
-# right will grow the containers width
-# up will shrink the containers height
-# down will grow the containers height
     bindsym $left resize shrink width 10px
-        bindsym $down resize grow height 10px
-        bindsym $up resize shrink height 10px
-        bindsym $right resize grow width 10px
-
-# Ditto, with arrow keys
-        bindsym Left resize shrink width 10px
-        bindsym Down resize grow height 10px
-        bindsym Up resize shrink height 10px
-        bindsym Right resize grow width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
 
 # Return to default mode
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
