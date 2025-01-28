@@ -51,6 +51,7 @@ return {
 						},
 					})
 				end,
+<<<<<<< Updated upstream
 			},
 		})
 

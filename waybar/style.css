@@ -1,34 +1,34 @@
 @import "mocha.css";
 
 * {
-    border: none;
-    border-radius: 4px;
-    font-family: "Roboto Mono Nerd Font Medium", Helvetica, Arial, sans-serif;
-    /* adjust font-size value to your liking: */
-    font-size: 16px;
-    min-height: 0;
+  border: none;
+  border-radius: 4px;
+  font-family: "Roboto Mono Nerd Font Medium", Helvetica, Arial, sans-serif;
+  /* adjust font-size value to your liking: */
+  font-size: 16px;
+  min-height: 0;
 }
 
 window#waybar {
-    background-color: alpha(shade(@base, 0.9), 0.6);
-    border-bottom: 2px solid alpha(@crust, 0.5);
-    color: @text;
-    transition-property: background-color;
-    transition-duration: .5s;
-    border-radius: 8px;
+  background-color: alpha(shade(@base, 0.9), 0.6);
+  border-bottom: 2px solid alpha(@crust, 0.5);
+  color: @text;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-radius: 8px;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+  opacity: 0.2;
 }
 
 tooltip * {
-    padding: 8px; 
-    background: transparent;
+  padding: 8px;
+  background: transparent;
 }
 
 tooltip {
-    background-color: alpha(@mantle, 0.8);
+  background-color: alpha(@mantle, 0.8);
 }
 
 /*
@@ -41,41 +41,41 @@ window#waybar.solo {
 */
 
 window#waybar.termite {
-    background-color: @red;
+  background-color: @red;
 }
 
 window#waybar.chromium {
-    background-color: @crust;
-    border: none;
+  background-color: @crust;
+  border: none;
 }
 
 #workspaces button {
-    min-width: 0;
-    padding: 0 0.6em;
-    background-color: transparent;
-    color: @text;
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
+  min-width: 0;
+  padding: 0 0.6em;
+  background-color: transparent;
+  color: @text;
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 -3px #ffffff;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 -3px #ffffff;
 }
 
-#workspaces button.focused {
-    background-color: @surface0;
-    box-shadow: inset 0 -3px @sky;
+#workspaces button.active {
+  background-color: @surface0;
+  box-shadow: inset 0 -3px @sky;
 }
 
 #workspaces button.urgent {
-    background-color: @maroon;
+  background-color: @maroon;
 }
 
 #mode {
-    background-color: @surface0;
-    border-bottom: 3px solid @sky;
+  background-color: @surface0;
+  border-bottom: 3px solid @sky;
 }
 
 #battery,
@@ -94,29 +94,29 @@ window#waybar.chromium {
 #custom-updates,
 #custom-gpu,
 #language {
-    padding: 1px 10px;
-    margin: 6px 3px; 
-    color: @subtext1;
-    background-color: @surface0;
+  padding: 1px 10px;
+  margin: 6px 3px;
+  color: @subtext1;
+  background-color: @surface0;
 }
 
 #custom-updates,
 #custom-exit {
-    padding: 1px 10px 1px 5px;
+  padding: 1px 10px 1px 5px;
 }
 
 #clock,
 #window,
 #workspaces {
-    margin: 0 4px;
+  margin: 0 4px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+  margin-right: 0;
 }

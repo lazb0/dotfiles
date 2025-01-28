@@ -4,13 +4,11 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 config_dots=(
     "nvim"
     "starship"
-    "sway"
-    "swaylock"
     "tmux"
     "waybar"
-    "wlogout"
     "wofi"
     "foot"
+    "hypr"
 )
 
 home_dots=(

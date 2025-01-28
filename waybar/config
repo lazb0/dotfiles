@@ -1,19 +1,16 @@
 [{
-    "output": "DP-3",
+    "output": "eDP-1",
     "layer": "top",
     "position": "top",
     "height": 36,
     "margin-top": 16,
     "margin-left": 20,
     "margin-right": 20,
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/updates", "tray", "pulseaudio", "network", "custom/exit", "sway/language"],
-    "sway/mode": {
+    "modules-right": ["custom/updates", "tray", "pulseaudio", "network", "hyprland/language"],
+    "hyprland/submap": {
         "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/window": {
-        "max-length": 75,
     },
     "tray": {
         "spacing": 10
@@ -22,7 +19,7 @@
         "timezone": "Europe/Prague",
 	      "format": "{:%b %d %H:%M}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "locale": "en_GB.UTF-8",
+        "locale": "cs_CZ.UTF-8",
         "calendar": {
           "mode": "year",
           "mode-mon-col": 3,
@@ -81,14 +78,11 @@
     "margin-bottom": 16,
     "margin-left": 20,
     "margin-right": 20,
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
     "modules-center": ["clock"],
-    "modules-right": ["memory", "cpu", "custom/gpu"],
-    "sway/mode": {
+    "modules-right": ["memory", "cpu"],
+    "hyprland/submap": {
         "format": "<span style=\"italic\" >{}</span>"
-    },
-    "sway/window": {
-        "max-length": 75,
     },
     "cpu": {
       "format": "{}%  "
