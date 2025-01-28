@@ -1,4 +1,5 @@
-[{
+[
+  {
     "output": "eDP-1",
     "layer": "top",
     "position": "top",
@@ -6,61 +7,69 @@
     "margin-top": 16,
     "margin-left": 20,
     "margin-right": 20,
-    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
-    "modules-center": ["clock"],
-    "modules-right": ["custom/updates", "tray", "pulseaudio", "network", "hyprland/language"],
-    "hyprland/submap": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+    "modules-center": [
+      "clock"
+    ],
+    "modules-right": [
+      "custom/updates",
+      "tray",
+      "pulseaudio",
+      "network",
+      "hyprland/language"
+    ],
     "tray": {
-        "spacing": 10
+      "spacing": 10
     },
     "clock": {
-        "timezone": "Europe/Prague",
-	      "format": "{:%b %d %H:%M}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "locale": "cs_CZ.UTF-8",
-        "calendar": {
-          "mode": "year",
-          "mode-mon-col": 3,
-          "weeks-pos": "right",
-          "on-scroll" : 1,
-          "format": {
-            "months":     "<span color='#89dceb'><b>{}</b></span>",
-            "days":       "<span color='#cdd6f4'><b>{}</b></span>",
-            "weeks":      "<span color='#6c7086'><b>W{}</b></span>",
-            "weekdays":   "<span color='#94e2d6'><b>{}</b></span>",
-            "today":      "<span color='#89dceb'><b><u>{}</u></b></span>"
-          }
-        },
-        "actions":  {
-          "on-scroll-up": "shift_up",
-          "on-scroll-down": "shift_down",
-          "on-click-middle": "shift_reset"
+      "timezone": "Europe/Prague",
+      "format": "{:%b %d %H:%M}",
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
+      "locale": "cs_CZ.UTF-8",
+      "calendar": {
+        "mode": "year",
+        "mode-mon-col": 3,
+        "weeks-pos": "right",
+        "on-scroll": 1,
+        "format": {
+          "months": "<span color='#89dceb'><b>{}</b></span>",
+          "days": "<span color='#cdd6f4'><b>{}</b></span>",
+          "weeks": "<span color='#6c7086'><b>W{}</b></span>",
+          "weekdays": "<span color='#94e2d6'><b>{}</b></span>",
+          "today": "<span color='#89dceb'><b><u>{}</u></b></span>"
         }
+      },
+      "actions": {
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down",
+        "on-click-middle": "shift_reset"
+      }
     },
     "network": {
-        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
-        "format-linked": "{ifname} (No IP) 󰈀",
-        "format-disconnected": "Disconnected ",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "tooltip": false
+      "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+      "format-linked": "{ifname} (No IP) 󰈀",
+      "format-disconnected": "Disconnected ",
+      "format-alt": "{ifname}: {ipaddr}/{cidr}",
+      "tooltip": false
     },
     "pulseaudio": {
       "format": "{volume}%  {icon}",
       "format-bluetooth": "{volume}%  {icon}",
       "format-muted": "󰝟",
       "format-icons": {
-        "default": ["󰕿", "󰖀", "󰕾"]
+        "default": [
+          "󰕿",
+          "󰖀",
+          "󰕾"
+        ]
       },
       "scroll-step": 5,
       "on-click": "pavucontrol",
-      "ignored-sinks": ["Easy Effects Sink"]
-    },
-    "custom/exit": {
-        "format": "",
-        "on-click": "sh -c \"grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') -t jpeg /home/lazbo/.config/wlogout/shot.png && magick /home/lazbo/.config/wlogout/shot.png -background black -blur 4x4 -colorize 75% /home/lazbo/.config/wlogout/shot.png && wlogout\"",
-        "tooltip": false
+      "ignored-sinks": [
+        "Easy Effects Sink"
+      ]
     },
     "custom/updates": {
       "format": "{} ",
@@ -69,8 +78,9 @@
       "exec-if": "exit 0",
       "on-click": "alacritty -e sh -c \"yay -Syu\"; pkill -SIGRTMIN+8 waybar",
       "signal": 8
-  }
-}, {
+    }
+  },
+  {
     "output": "HDMI-A-1",
     "layer": "top",
     "position": "bottom",
@@ -78,17 +88,21 @@
     "margin-bottom": 16,
     "margin-left": 20,
     "margin-right": 20,
-    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
-    "modules-center": ["clock"],
-    "modules-right": ["memory", "cpu"],
-    "hyprland/submap": {
-        "format": "<span style=\"italic\" >{}</span>"
-    },
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+    "modules-center": [
+      "clock"
+    ],
+    "modules-right": [
+      "memory",
+      "cpu"
+    ],
     "cpu": {
       "format": "{}%  "
     },
     "memory": {
-      "format": "{}%  ",
+      "format": "{}%  "
     },
     "custom/gpu": {
       "exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
@@ -97,27 +111,28 @@
       "interval": 1
     },
     "clock": {
-        "timezone": "Europe/Prague",
-	      "format": "{:%b %d %H:%M}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "locale": "en_GB.UTF-8",
-        "calendar": {
-          "mode": "year",
-          "mode-mon-col": 3,
-          "weeks-pos": "right",
-          "on-scroll" : 1,
-          "format": {
-            "months":     "<span color='#89dceb'><b>{}</b></span>",
-            "days":       "<span color='#cdd6f4'><b>{}</b></span>",
-            "weeks":      "<span color='#6c7086'><b>W{}</b></span>",
-            "weekdays":   "<span color='#94e2d6'><b>{}</b></span>",
-            "today":      "<span color='#89dceb'><b><u>{}</u></b></span>"
-          }
-        },
-        "actions":  {
-          "on-scroll-up": "shift_up",
-          "on-scroll-down": "shift_down",
-          "on-click-middle": "shift_reset"
+      "timezone": "Europe/Prague",
+      "format": "{:%b %d %H:%M}",
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
+      "locale": "en_GB.UTF-8",
+      "calendar": {
+        "mode": "year",
+        "mode-mon-col": 3,
+        "weeks-pos": "right",
+        "on-scroll": 1,
+        "format": {
+          "months": "<span color='#89dceb'><b>{}</b></span>",
+          "days": "<span color='#cdd6f4'><b>{}</b></span>",
+          "weeks": "<span color='#6c7086'><b>W{}</b></span>",
+          "weekdays": "<span color='#94e2d6'><b>{}</b></span>",
+          "today": "<span color='#89dceb'><b><u>{}</u></b></span>"
         }
+      },
+      "actions": {
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down",
+        "on-click-middle": "shift_reset"
+      }
     }
-}]
+  }
+]
