@@ -88,7 +88,7 @@ window#waybar.chromium {
   background-color: @surface0;
 }
 
-#custom-updates,
+#custom-updates {
   padding: 1px 10px 1px 5px;
 }
 
